@@ -10,14 +10,31 @@
 #import "NSStringInternal.h"
 #import <Foundation/NSPortCoder.h>
 #import <dispatch/dispatch.h>
+#import <Foundation/NSRaise.h>
 
 @implementation NSAttributedString
+    - (NSString *) string {
+        NSInvalidAbstractInvocation();
+        return nil;
+    }
 
+    - (NSDictionary *) attributesAtIndex: (NSUInteger) index effectiveRange: (NSRangePointer) range {
+        NSInvalidAbstractInvocation();
+        return nil;
+    }
 @end
 
 @implementation NSMutableAttributedString
+    - (void) replaceCharactersInRange: (NSRange) range withString: (NSString *) str {
+        NSInvalidAbstractInvocation();
+    }
+
+    - (void) setAttributes: (NSDictionary *) attrs range: (NSRange) range {
+        NSInvalidAbstractInvocation();
+    }
 
 @end
+
 CF_PRIVATE
 @interface NSMutableStringProxyForMutableAttributedString : NSMutableString
 {
