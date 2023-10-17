@@ -73,7 +73,7 @@ OBJC_PROTOCOL_IMPL_POP
     NSUInteger length = [s length];
     if ((uint64_t)range.location + range.length > length)
     {
-        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%d,%d) beyond NSAttributedString bounds (%d)", range.location, range.length, [self length]] userInfo:nil];
+        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%lu,%lu) beyond NSAttributedString bounds (%lu)", (unsigned long) range.location, (unsigned long) range.length, (unsigned long) [self length]] userInfo:nil];
     }
     NSString *substring = [s substringWithRange:range];
     NSMutableAttributedString *obj = [[[NSMutableAttributedString alloc] initWithString:substring] autorelease];
@@ -104,7 +104,7 @@ OBJC_PROTOCOL_IMPL_POP
 {
     if ((uint64_t)enumerationRange.location + enumerationRange.length > [self length])
     {
-        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%d,%d) beyond NSAttributedString bounds (%d)", enumerationRange.location, enumerationRange.length, [self length]] userInfo:nil];
+        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%lu,%lu) beyond NSAttributedString bounds (%lu)", (unsigned long) enumerationRange.location, (unsigned long) enumerationRange.length, (unsigned long) [self length]] userInfo:nil];
     }
     if (enumerationRange.length == 0)
     {
@@ -168,7 +168,7 @@ OBJC_PROTOCOL_IMPL_POP
 {
     if ((uint64_t)enumerationRange.location + enumerationRange.length > [self length])
     {
-        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%d,%d) beyond NSAttributedString bounds (%d)", enumerationRange.location, enumerationRange.length, [self length]] userInfo:nil];
+        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"range (%lu,%lu) beyond NSAttributedString bounds (%lu)", (unsigned long) enumerationRange.location, (unsigned long) enumerationRange.length, (unsigned long) [self length]] userInfo:nil];
     }
     if (enumerationRange.length == 0)
     {
