@@ -25,6 +25,7 @@
 - (NSEnumerator<ObjectType> *)objectEnumerator;
 - (NSArray<ObjectType> *)objectsForKeys:(NSArray<KeyType> *)keys notFoundMarker:(id)marker;
 - (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;
+- (BOOL)writeToURL:(NSURL *)url error:(NSError * _Nullable *)error;
 - (BOOL)writeToURL:(NSURL *)url atomically:(BOOL)atomically;
 - (NSArray<KeyType> *)keysSortedByValueUsingSelector:(SEL)comparator;
 - (void)getObjects:(ObjectType __unsafe_unretained [])objects andKeys:(KeyType __unsafe_unretained [])keys;
